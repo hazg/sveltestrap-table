@@ -1,40 +1,40 @@
 <script context="module">
   import Pagination, {
     setLabels as _setPaginationLabels
-  } from "./pagination.svelte";
-  import TableRow from "./table-row.svelte";
-  import Search, { setLabels as _setSearchLabels } from "./search.svelte";
-  import Sort, { setLabels as _setSortLabels } from "./sort.svelte";
-  export { Pagination, TableRow, Search, Sort };
+  } from "./pagination.svelte"
+  import TableRow from "./table-row.svelte"
+  import Search, { setLabels as _setSearchLabels } from "./search.svelte"
+  import Sort, { setLabels as _setSortLabels } from "./sort.svelte"
+  export { Pagination, TableRow, Search, Sort }
 
-  let globalLabels;
+  let globalLabels
 
   export function setTableLabels(labels) {
-    globalLabels = labels;
+    globalLabels = labels
   }
 
-  export const setPaginationLabels = _setPaginationLabels;
-  export const setSearchLabels = _setSearchLabels;
-  export const setSortLabels = _setSortLabels;
+  export const setPaginationLabels = _setPaginationLabels
+  export const setSearchLabels = _setSearchLabels
+  export const setSortLabels = _setSortLabels
 </script>
 
 <script>
-  import { createEventDispatcher, setContext } from "svelte";
-  const dispatch = createEventDispatcher();
+  import { createEventDispatcher, setContext } from "svelte"
+  const dispatch = createEventDispatcher()
 
-  export let loading = false;
-  export let page = 0;
-  export let pageIndex = 0;
-  export let pageSize = 10;
-  export let responsive = true;
-  export let rows;
-  export let serverSide = false;
+  export let loading = false
+  export let page = 0
+  export let pageIndex = 0
+  export let pageSize = 10
+  export let responsive = true
+  export let rows
+  export let serverSide = false
 
-  let buttons = [-2, -1, 0, 1, 2];
-  let pageCount = 0;
+  let buttons = [-2, -1, 0, 1, 2]
+  let pageCount = 0
 
-  $: filteredRows = rows;
-  $: visibleRows = filteredRows.slice(pageIndex, pageIndex + pageSize);
+  $: filteredRows = rows
+  $: visibleRows = filteredRows.slice(pageIndex, pageIndex + pageSize)
 
   setContext("state", {
     getState: () => ({
@@ -45,18 +45,18 @@
       filteredRows
     }),
     setPage: (_page, _pageIndex) => {
-      page = _page;
-      pageIndex = _pageIndex;
+      page = _page
+      pageIndex = _pageIndex
     },
     setRows: _rows => (filteredRows = _rows)
   });
 
   function onPageChange(event) {
-    dispatch("pageChange", event.detail);
+    dispatch("pageChange", event.detail)
   }
 
   function onSearch(event) {
-    dispatch("search", event.detail);
+    dispatch("search", event.detail)
   }
 </script>
 

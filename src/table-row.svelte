@@ -1,11 +1,11 @@
 <script>
-  import { createEventDispatcher } from "svelte";
-  const dispatch = createEventDispatcher();
+  import { createEventDispatcher } from "svelte"
+  const dispatch = createEventDispatcher()
 
-  export let index = 0;
+  export let index = 0
 
   function onClick(event) {
-    dispatch("click", event);
+    dispatch("click", event)
   }
 </script>
 

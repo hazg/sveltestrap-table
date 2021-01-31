@@ -1,18 +1,18 @@
 <script context="module">
-  let globalLabels;
+  let globalLabels
 
   export function setLabels(labels) {
-    globalLabels = labels;
+    globalLabels = labels
   }
 </script>
 
 <script>
-  import { createEventDispatcher, getContext } from "svelte";
-  const dispatch = createEventDispatcher();
-  const stateContext = getContext("state");
+  import { createEventDispatcher, getContext } from "svelte"
+  const dispatch = createEventDispatcher()
+  const stateContext = getContext("state")
 
   export let filter = (row, text, index) => {
-    text = text.toLowerCase();
+    text = text.toLowerCase()
     for (let i in row) {
       if (
         row[i]
@@ -20,21 +20,21 @@
           .toLowerCase()
           .indexOf(text) > -1
       ) {
-        return true;
+        return true
       }
     }
-    return false;
+    return false
   };
-  export let index = -1;
-  export let text = "";
+  export let index = -1
+  export let text = ""
 
   export let labels = {
     placeholder: "Search",
     ...globalLabels
-  };
+  }
 
   async function onSearch(event) {
-    const state = stateContext.getState();
+    const state = stateContext.getState()
     const detail = {
       originalEvent: event,
       filter,
@@ -45,19 +45,19 @@
       pageSize: state.pageSize,
       rows: state.filteredRows
     };
-    dispatch("search", detail);
+    dispatch("search", detail)
 
     if (detail.preventDefault !== true) {
       if (detail.text.length === 0) {
-        stateContext.setRows(state.rows);
+        stateContext.setRows(state.rows)
       } else {
         stateContext.setRows(
           detail.rows.filter(r => detail.filter(r, detail.text, index))
-        );
+        )
       }
-      stateContext.setPage(0, 0);
+      stateContext.setPage(0, 0)
     } else {
-      stateContext.setRows(detail.rows);
+      stateContext.setRows(detail.rows)
     }
   }
 </script>

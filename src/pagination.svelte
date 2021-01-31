@@ -8,39 +8,39 @@
 </script>
 
 <script>
-  import { Pagination, PaginationItem, PaginationLink } from 'sveltestrap';
-  import { createEventDispatcher, getContext } from "svelte";
-  const dispatch = createEventDispatcher();
-  const stateContext = getContext("state");
+  import { Pagination, PaginationItem, PaginationLink } from 'sveltestrap'
+  import { createEventDispatcher, getContext } from "svelte"
+  const dispatch = createEventDispatcher()
+  const stateContext = getContext("state")
 
-  export let buttons = [-2, -1, 0, 1, 2];
-  export let count;
-  export let page = 0;
-  export let pageSize;
-  export let serverSide = false;
+  export let buttons = [-2, -1, 0, 1, 2]
+  export let count
+  export let page = 0
+  export let pageSize
+  export let serverSide = false
 
   export let labels = {
-    first: "First",
-    last: "Last",
-    next: "Next",
-    previous: "Previous",
+    first: "<<",
+    last: ">>",
+    next: ">",
+    previous: "<",
     ...globalLabels
-  };
+  }
 
-  $: pageCount = Math.floor(count / pageSize);
+  $: pageCount = Math.floor(count / pageSize)
 
   function onChange(event, page) {
-    const state = stateContext.getState();
+    const state = stateContext.getState()
     const detail = {
       originalEvent: event,
       page,
       pageIndex: serverSide ? 0 : page * state.pageSize,
       pageSize: state.pageSize
     };
-    dispatch("pageChange", detail);
+    dispatch("pageChange", detail)
 
     if (detail.preventDefault !== true) {
-      stateContext.setPage(detail.page, detail.pageIndex);
+      stateContext.setPage(detail.page, detail.pageIndex)
     }
   }
 </script>

@@ -1,15 +1,15 @@
 <script context="module">
-  let globalLabels;
+  let globalLabels
 
   export function setLabels(labels) {
-    globalLabels = labels;
+    globalLabels = labels
   }
 </script>
 
 <script>
-  import { createEventDispatcher, getContext } from "svelte";
-  const dispatch = createEventDispatcher();
-  const stateContext = getContext("state");
+  import { createEventDispatcher, getContext } from "svelte"
+  const dispatch = createEventDispatcher()
+  const stateContext = getContext("state")
 
   export let dir = "none";
   export let key;
@@ -21,8 +21,8 @@
   };
 
   function onClick(event) {
-    const state = stateContext.getState();
-    let rows;
+    const state = stateContext.getState()
+    let rows
 
     const detail = {
       originalEvent: event,
@@ -31,12 +31,12 @@
       rows: state.filteredRows
     };
 
-    dispatch("sort", detail);
+    dispatch("sort", detail)
 
     if (detail.preventDefault !== true) {
-      dir = detail.dir;
+      dir = detail.dir
     }
-    stateContext.setRows(detail.rows);
+    stateContext.setRows(detail.rows)
   }
 </script>
 
