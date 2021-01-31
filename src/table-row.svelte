@@ -10,9 +10,6 @@
 </script>
 
 <style>
-  .odd {
-    background-color: #f7f7f7;
-  }
 </style>
 
 <tr
