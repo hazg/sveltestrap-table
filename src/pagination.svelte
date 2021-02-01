@@ -19,14 +19,6 @@
   export let pageSize
   export let serverSide = false
 
-  export let labels = {
-    first: "<<",
-    last: ">>",
-    next: ">",
-    previous: "<",
-    ...globalLabels
-  }
-
   $: pageCount = Math.floor(count / pageSize)
 
   function onChange(event, page) {
