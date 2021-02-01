@@ -6,8 +6,7 @@
   import Search, { setLabels as _setSearchLabels } from "./search.svelte"
   import Sort, { setLabels as _setSortLabels } from "./sort.svelte"
   export { Pagination, TableRow, Search, Sort }
-
-  let globalLabels
+  import { Table } from 'sveltestrap'
 
   export function setTableLabels(labels) {
     globalLabels = labels
@@ -59,6 +58,32 @@
     dispatch("search", event.detail)
   }
 </script>
+
+
+
+<slot name="top">
+  <div class="slot-top">
+    <svelte:component this={Search} on:search={onSearch} />
+  </div>
+</slot>
+<!-- class={'table ' + $$props.class} class:responsive -->
+<Table responsive>
+  <slot name="head" />
+  <slot rows={visibleRows} />
+  <slot name="foot" />
+</Table>
+
+<slot name="bottom">
+  <div class="slot-bottom">
+    <svelte:component
+      this={Pagination}
+      {page}
+      {pageSize}
+      {serverSide}
+      count={filteredRows.length - 1}
+      on:pageChange={onPageChange} />
+  </div>
+</slot>
 
 <style>
   /*.table {
@@ -144,27 +169,3 @@
     }
   }*/
 </style>
-
-<slot name="top">
-  <div class="slot-top">
-    <svelte:component this={Search} on:search={onSearch} />
-  </div>
-</slot>
-
-<table class={'table ' + $$props.class} class:responsive>
-  <slot name="head" />
-  <slot rows={visibleRows} />
-  <slot name="foot" />
-</table>
-
-<slot name="bottom">
-  <div class="slot-bottom">
-    <svelte:component
-      this={Pagination}
-      {page}
-      {pageSize}
-      {serverSide}
-      count={filteredRows.length - 1}
-      on:pageChange={onPageChange} />
-  </div>
-</slot>

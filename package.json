@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "src/table.svelte",
   "devDependencies": {
-    "svelte": "^3.0.0"
+    "svelte": "^3.0.0",
+    "sveltestrap": "^3.13.0"
   }
 }
