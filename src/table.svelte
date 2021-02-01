@@ -1,18 +1,11 @@
 <script context="module">
-  import Pagination, {
-    setLabels as _setPaginationLabels
-  } from "./pagination.svelte"
+  import Pagination from "./pagination.svelte"
   import TableRow from "./table-row.svelte"
   import Search, { setLabels as _setSearchLabels } from "./search.svelte"
   import Sort, { setLabels as _setSortLabels } from "./sort.svelte"
   export { Pagination, TableRow, Search, Sort }
   import { Table } from 'sveltestrap'
 
-  export function setTableLabels(labels) {
-    globalLabels = labels
-  }
-
-  export const setPaginationLabels = _setPaginationLabels
   export const setSearchLabels = _setSearchLabels
   export const setSortLabels = _setSortLabels
 </script>
@@ -25,7 +18,6 @@
   export let page = 0
   export let pageIndex = 0
   export let pageSize = 10
-  export let responsive = true
   export let rows
   export let serverSide = false
 

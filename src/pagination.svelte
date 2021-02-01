@@ -1,12 +1,3 @@
-<script context="module">
-  // TODO: Convert custom pagination to sveltestrap
-  let globalLabels;
-
-  export function setLabels(labels) {
-    globalLabels = labels;
-  }
-</script>
-
 <script>
   import { Pagination, PaginationItem, PaginationLink } from 'sveltestrap'
   import { createEventDispatcher, getContext } from "svelte"
