@@ -49,19 +49,15 @@
 </style>
 
 <Pagination>
-  <PaginationItem>
-    <PaginationLink disabled={page === 0} on:click={e => onChange(e, 0)}>
-      {labels.first}
-    </PaginationLink>
+  <PaginationItem disabled={page === 0}>
+    <PaginationLink first on:click={e => onChange(e, 0)}></PaginationLink>
   </PaginationItem>
-  <PaginationItem>
-    <PaginationLink disabled={page === 0} on:click={e => onChange(e, page - 1)}>
-      {labels.previous}
-    </PaginationLink>
+  <PaginationItem disabled={page === 0}>
+    <PaginationLink previous on:click={e => onChange(e, page - 1)}></PaginationLink>
   </PaginationItem>
   {#each buttons as button}
     {#if page + button >= 0 && page + button <= pageCount}
-      <PaginationItem>
+      <PaginationItem active={page === page + button}>
         <PaginationLink
           disabled={page === page + button}
           on:click={e => onChange(e, page + button)}>
@@ -70,16 +66,10 @@
       </PaginationItem>
     {/if}
   {/each}
-  <PaginationItem>
-    <PaginationLink
-      disabled={page > pageCount - 1}
-      on:click={e => onChange(e, page + 1)}>
-      {labels.next}
-    </PaginationLink>
+  <PaginationItem disabled={page > pageCount - 1}>
+    <PaginationLink next on:click={e => onChange(e, page + 1)} />
   </PaginationItem>
-  <PaginationItem>
-    <PaginationLink disabled={page >= pageCount} on:click={e => onChange(e, pageCount)}>
-      {labels.last}
-    </PaginationLink>
+  <PaginationItem disabled={page >= pageCount}>
+    <PaginationLink last on:click={e => onChange(e, pageCount)} />
   </PaginationItem>
 </Pagination>
