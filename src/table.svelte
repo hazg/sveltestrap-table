@@ -52,32 +52,39 @@
 </script>
 
 
+<div class="sveltestrap-table" class:loading>
+  <slot name="top">
+    <div class="slot-top">
+      <svelte:component this={Search} on:search={onSearch} />
+    </div>
+  </slot>
+  <!-- class={'table ' + $$props.class} class:responsive -->
+  <Table responsive>
+    <slot name="head" />
+    <slot rows={visibleRows} />
+    <slot name="foot" />
+  </Table>
 
-<slot name="top">
-  <div class="slot-top">
-    <svelte:component this={Search} on:search={onSearch} />
-  </div>
-</slot>
-<!-- class={'table ' + $$props.class} class:responsive -->
-<Table responsive>
-  <slot name="head" />
-  <slot rows={visibleRows} />
-  <slot name="foot" />
-</Table>
-
-<slot name="bottom">
-  <div class="slot-bottom">
-    <svelte:component
-      this={Pagination}
-      {page}
-      {pageSize}
-      {serverSide}
-      count={filteredRows.length - 1}
-      on:pageChange={onPageChange} />
-  </div>
-</slot>
+  <slot name="bottom">
+    <div class="slot-bottom">
+      <svelte:component
+        this={Pagination}
+        {page}
+        {pageSize}
+        {serverSide}
+        count={filteredRows.length - 1}
+        on:pageChange={onPageChange} />
+    </div>
+  </slot>
+</div>
 
 <style>
+
+  .loading{
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
   /*.table {
     width: 100%;
     border-collapse: collapse;
