@@ -2,6 +2,7 @@
   "name": "sveltestrap-table",
   "version": "1.0.0",
   "main": "src/table.svelte",
+  "description": "Server-side (get data from server) table on svelte and sveltestrap.",
   "devDependencies": {
     "svelte": "^3.0.0",
     "sveltestrap": "^3.13.0"
