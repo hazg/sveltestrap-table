@@ -5,7 +5,7 @@
   export let index = 0
 
   function onClick(event) {
-    dispatch("click", event)
+    dispatch("rowClick", event)
   }
 </script>
 

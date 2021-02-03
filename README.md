@@ -7,7 +7,7 @@ Server-side (get data from server) table on svelte and sveltestrap.
   //Sort component is optional
   import { onMount } from "svelte";
   import Table, { Pagination, TableRow, Search, Sort } from "./table.svelte";
-  import { getData } from "./server.js";
+  import { getData } from "api/v1/data.json";
   import { sortNumber, sortString } from "./sorting.js";
 
   let rows = [];
@@ -59,18 +59,9 @@ Server-side (get data from server) table on svelte and sveltestrap.
   </div>
   <thead slot="head">
     <tr>
-      <th>
-        Name
-        <Sort key="name" on:sort={onSort} />
-      </th>
-      <th>
-        Lastname
-        <Sort key="lastName" on:sort={onSort} />
-      </th>
-      <th>
-        Age
-        <Sort key="age" on:sort={onSort} />
-      </th>
+      <th> Name       <Sort key="name" on:sort={onSort} /></th>
+      <th> Lastname   <Sort key="lastName" on:sort={onSort} /></th>
+      <th> Age        <Sort key="age" on:sort={onSort} /> </th>
     </tr>
   </thead>
   <tbody>
@@ -82,7 +73,4 @@ Server-side (get data from server) table on svelte and sveltestrap.
       </TableRow>
     {/each}
   </tbody>
-  <div slot="bottom">
-    <Pagination {page} {pageSize} count={rowsCount} serverSide={true} on:pageChange={onPageChange} />
-  </div>
 </Table>
