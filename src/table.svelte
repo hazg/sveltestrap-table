@@ -36,13 +36,11 @@
       currentPage,
       pageSize,
       rows,
-      filteredRows
     }),
     setPage: (_page, _currentPage) => {
       page = _page
       currentPage = _currentPage
     },
-    setRows: _rows => (filteredRows = _rows)
   });
 
   function onPageChange(event) {

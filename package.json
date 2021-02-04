@@ -7,5 +7,6 @@
     "svelte": "^3.0.0",
     "sveltestrap": "^3.13.0",
     "sveltestrap-paginate": "hazg/sveltestrap-paginate"
-  }
+  },
+  "dependencies": {}
 }
