@@ -25,12 +25,10 @@
   export let striped = false
   export let dark = false
   export let hover = false
+  export let totalItems = 0
 
   let buttons = [-2, -1, 0, 1, 2]
   let pageCount = 0
-
-  $: filteredRows = rows
-  $: visibleRows = filteredRows.slice(currentPage, currentPage + pageSize)
 
   setContext("state", {
     getState: () => ({
@@ -49,6 +47,7 @@
 
   function onPageChange(event) {
     dispatch("pageChange", event.detail)
+    currentPage = event.detail.page
   }
 
   function onSearch(event) {
@@ -74,16 +73,16 @@
     {hover}
   >
     <slot name="head" />
-    <slot rows={visibleRows} />
+    <slot />
     <slot name="foot" />
   </Table>
 
   <slot name="bottom">
     <div class="slot-bottom">
       <SveltestrapPagination
-        totalItems="{rows.length}"
-        pageSize="{pageSize}"
+        {totalItems}
         currentPage="{currentPage}"
+        pageSize="{pageSize}"
         limit="{2}"
         showStepOptions="{true}"
         on:setPage={onPageChange}
