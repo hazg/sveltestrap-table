@@ -13,14 +13,13 @@
 <script>
   import { createEventDispatcher, setContext } from "svelte"
   const dispatch = createEventDispatcher()
-  export let pagination
   export let loading = false
   export let page = 0
-  export let pageIndex = 0
+  export let currentPage = 0
   export let pageSize = 10
   export let rows
   export let size = false
-  export let responsive = false
+  export let responsive = true
   export let bordered = false
   export let borderless = false
   export let striped = false
@@ -31,19 +30,19 @@
   let pageCount = 0
 
   $: filteredRows = rows
-  $: visibleRows = filteredRows.slice(pageIndex, pageIndex + pageSize)
+  $: visibleRows = filteredRows.slice(currentPage, currentPage + pageSize)
 
   setContext("state", {
     getState: () => ({
       page,
-      pageIndex,
+      currentPage,
       pageSize,
       rows,
       filteredRows
     }),
-    setPage: (_page, _pageIndex) => {
+    setPage: (_page, _currentPage) => {
       page = _page
-      pageIndex = _pageIndex
+      currentPage = _currentPage
     },
     setRows: _rows => (filteredRows = _rows)
   });
@@ -82,10 +81,9 @@
   <slot name="bottom">
     <div class="slot-bottom">
       <SveltestrapPagination
-        {...pagination}
         totalItems="{rows.length}"
         pageSize="{pageSize}"
-        currentPage="{page}"
+        currentPage="{currentPage}"
         limit="{2}"
         showStepOptions="{true}"
         on:setPage={onPageChange}
