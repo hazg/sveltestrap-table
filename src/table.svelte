@@ -7,25 +7,25 @@
   import Search, { setLabels as _setSearchLabels } from "./search.svelte"
   import Sort, { setLabels as _setSortLabels } from "./sort.svelte"
   import { Table } from 'sveltestrap'
+  import { SveltestrapPagination } from 'sveltestrap-paginate'
 </script>
 
 <script>
   import { createEventDispatcher, setContext } from "svelte"
   const dispatch = createEventDispatcher()
-
+  export let pagination
   export let loading = false
   export let page = 0
   export let pageIndex = 0
   export let pageSize = 10
   export let rows
-  export let serverSide = false
   export let size = false
   export let responsive = false
-  export let bordered = false;
-  export let borderless = false;
-  export let striped = false;
-  export let dark = false;
-  export let hover = false;
+  export let bordered = false
+  export let borderless = false
+  export let striped = false
+  export let dark = false
+  export let hover = false
 
   let buttons = [-2, -1, 0, 1, 2]
   let pageCount = 0
@@ -81,13 +81,15 @@
 
   <slot name="bottom">
     <div class="slot-bottom">
-      <svelte:component
-        this={Pagination}
-        {page}
-        {pageSize}
-        {serverSide}
-        count={filteredRows.length - 1}
-        on:pageChange={onPageChange} />
+      <SveltestrapPagination
+        {...pagination}
+        totalItems="{rows.length}"
+        pageSize="{pageSize}"
+        currentPage="{page}"
+        limit="{2}"
+        showStepOptions="{true}"
+        on:setPage={onPageChange}
+      />
     </div>
   </slot>
 </div>
