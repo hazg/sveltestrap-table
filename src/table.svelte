@@ -14,8 +14,8 @@
   import { createEventDispatcher, setContext } from "svelte"
   const dispatch = createEventDispatcher()
   export let loading = false
-  export let page = 0
-  export let currentPage = 0
+  export let page = 1
+  export let currentPage = 1
   export let pageSize = 10
   export let rows
   export let size = false
