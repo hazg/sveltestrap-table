@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "main": "src/table.svelte",
   "description": "Server-side (get data from server) table on svelte and sveltestrap.",
-  "dependencies": {
-    "@iconify/svelte": "^1.0.3",
-    "svelte": "^3.0.0",
-    "svelte-dynamic-iconify": "hazg/svelte-dynamic-iconify",
-    "sveltestrap": "^3.13.0",
-    "sveltestrap-paginate": "hazg/sveltestrap-paginate"
-  }
+  "bundledDependencies":
+    ["@iconify/svelte","svelte",
+    "svelte-dynamic-iconify",
+    "sveltestrap",
+    "sveltestrap-paginate"
+    ]
 }
