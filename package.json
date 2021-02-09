@@ -11,7 +11,4 @@
     "sveltestrap": "^3.13.0",
     "sveltestrap-paginate": "hazg/sveltestrap-paginate"
   },
-  "devDependencies": {
-    "@iconify/svelte": "^1.0.3"
-  }
 }
