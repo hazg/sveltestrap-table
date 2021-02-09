@@ -2,6 +2,32 @@
 # yarn lockfile v1
 
 
+"@cyberalien/redundancy@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@cyberalien/redundancy/-/redundancy-1.1.0.tgz#8f8f9396de904428c7baaaffbf672ef41bbdc6f3"
+  integrity sha512-+ZvuwtVXzyxX1CWnP+X5XgDelseU9KSYgmPu3/DSraR7Qyi/vLZwuRRX0sYO24M/gZaChNXRBEK6RHRe3uBndw==
+
+"@iconify/core@^1.0.0-rc.2":
+  version "1.0.0-rc.5"
+  resolved "https://registry.yarnpkg.com/@iconify/core/-/core-1.0.0-rc.5.tgz#6ae8e3a8f8cef5d4a7fb753c6f2b340658fd6611"
+  integrity sha512-1VFvNlBqsX/pMRI3nd00UzEqAS7weayJ/CyCD18b8+kFa9PvoVcGAmob1bTTm++v+QKVqQs+8iQaBFl/DrrsvA==
+  dependencies:
+    "@cyberalien/redundancy" "^1.1.0"
+    "@iconify/types" "^1.0.6"
+
+"@iconify/svelte@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@iconify/svelte/-/svelte-1.0.3.tgz#308d5f2f15be39c28b9b7bb7a858078c26f62595"
+  integrity sha512-Exjwm+LDOmueoVRd8hyG7s+8Q/jTh3tFOaaHTy/TCI2/OTkZe02fkHAUeNtlwnr867X6h3dC2ZIt0Ie4epaGhg==
+  dependencies:
+    "@iconify/core" "^1.0.0-rc.2"
+    "@iconify/types" "^1.0.5"
+
+"@iconify/types@^1.0.5", "@iconify/types@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@iconify/types/-/types-1.0.6.tgz#87a0409d9ce58a04e6c76f89637d69c81bc0d942"
+  integrity sha512-eG74WPaqjBGnZ3Xy36X4LRDA/ZlhCK6T0zbsAAIYObY2Qija/379iXx+e2wWwEIXS46B62nGaUcuI0MpUnTSrg==
+
 "@polka/url@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-0.5.0.tgz#b21510597fd601e5d7c95008b76bf0d254ebfd31"
@@ -79,6 +105,10 @@ sirv@^0.4.6:
   dependencies:
     "@polka/url" "^0.5.0"
     mime "^2.3.1"
+
+svelte-dynamic-iconify@hazg/svelte-dynamic-iconify:
+  version "1.0.1"
+  resolved "https://codeload.github.com/hazg/svelte-dynamic-iconify/tar.gz/822fd6951ed02d4cca0c357a5e19d515ea5d7e6a"
 
 svelte@^3.0.0:
   version "3.32.1"

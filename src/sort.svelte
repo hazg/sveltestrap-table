@@ -1,34 +1,23 @@
-<script context="module">
-  let globalLabels
-
-  export function setLabels(labels) {
-    globalLabels = labels
-  }
-</script>
-
 <script>
-  import { createEventDispatcher, getContext } from "svelte"
+  import Icon from 'svelte-dynamic-iconify'
+  import { createEventDispatcher } from "svelte"
   const dispatch = createEventDispatcher()
-  const stateContext = getContext("state")
 
   export let dir = "none";
-  export let key;
+  export let key
+  export let sortBy
   export let labels = {
-    asc: { title: "Ascending", html: "&#8593;" },
-    desc: { title: "Desceding", html: "&#8595;" },
-    unsorted: { title: "Unsorted", html: "&#8645;" },
-    ...globalLabels
+    asc:      { title: "Ascending", icon: 'fa:sort-asc' },
+    desc:     { title: "Desceding", icon: "fa:sort-desc" },
+    unsorted: { title: "Unsorted",  icon: "fa:sort" },
   };
 
   function onClick(event) {
-    const state = stateContext.getState()
-    let rows
 
     const detail = {
       originalEvent: event,
       key,
       dir: dir !== "desc" ? "desc" : "asc",
-      rows: state.filteredRows
     };
 
     dispatch("sort", detail)
@@ -36,7 +25,7 @@
     if (detail.preventDefault !== true) {
       dir = detail.dir
     }
-    stateContext.setRows(detail.rows)
+    console.log(sortBy)
   }
 </script>
 
@@ -52,16 +41,10 @@
 
 <span class="sort" on:click={onClick}>
   {#if dir === 'asc'}
-    <span title={labels.asc.title}>
-      {@html labels.asc.html}
-    </span>
+    <Icon name={labels.asc.icon} />
   {:else if dir === 'desc'}
-    <span title={labels.desc.title}>
-      {@html labels.desc.html}
-    </span>
+    <Icon name={labels.desc.icon} />
   {:else}
-    <span title={labels.unsorted.title}>
-      {@html labels.unsorted.html}
-    </span>
+    <Icon name={labels.unsorted.icon} />
   {/if}
 </span>

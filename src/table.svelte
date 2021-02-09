@@ -1,11 +1,10 @@
 <script context="module">
   export { TableRow, Search, Sort }
   export const setSearchLabels = _setSearchLabels
-  export const setSortLabels = _setSortLabels
 
   import TableRow from "./table-row.svelte"
   import Search, { setLabels as _setSearchLabels } from "./search.svelte"
-  import Sort, { setLabels as _setSortLabels } from "./sort.svelte"
+  import Sort from "./sort.svelte"
   import { Table } from 'sveltestrap'
   import { SveltestrapPagination } from 'sveltestrap-paginate'
 </script>
