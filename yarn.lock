@@ -15,6 +15,11 @@
     "@cyberalien/redundancy" "^1.1.0"
     "@iconify/types" "^1.0.6"
 
+"@iconify/iconify@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@iconify/iconify/-/iconify-1.0.7.tgz#22e6d384482995738746eeb38b9b76588df41d57"
+  integrity sha512-qCbH1V/Ceg302lrgBiiXCZAyqMAq8KqsHYokCpUvgBH6yYfAmvlSkEEBrmJdHofQvfY/+xaeQcsOOTjW7JakNw==
+
 "@iconify/svelte@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@iconify/svelte/-/svelte-1.0.3.tgz#308d5f2f15be39c28b9b7bb7a858078c26f62595"
