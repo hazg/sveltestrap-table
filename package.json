@@ -10,5 +10,5 @@
     "svelte-dynamic-iconify": "hazg/svelte-dynamic-iconify",
     "sveltestrap": "^3.13.0",
     "sveltestrap-paginate": "hazg/sveltestrap-paginate"
-  },
+  }
 }
