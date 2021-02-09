@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/table.svelte",
   "description": "Server-side (get data from server) table on svelte and sveltestrap.",
-  "dependencies": {
+  "peerDependencies": {
     "@iconify/svelte": "^1.0.3",
     "svelte": "^3.0.0",
     "svelte-dynamic-iconify": "hazg/svelte-dynamic-iconify",
