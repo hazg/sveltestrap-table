@@ -3,8 +3,8 @@
   import { createEventDispatcher } from "svelte"
 
   const dispatch = createEventDispatcher()
+
   export let sortBy
-  export let currentSortKey
   export let key
   export let icons = {
     asc:      'fa:sort-asc',
@@ -15,7 +15,6 @@
   let state = false
 
   function onClick(event) {
-    currentSortKey = key
     state = state ? 0:1
     dispatch("sort", {key: key, dir: state?'asc':'desc'})
   }
