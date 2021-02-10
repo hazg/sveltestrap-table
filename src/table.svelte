@@ -26,6 +26,7 @@
   export let hover = false
   export let totalItems = 0
 
+
   let buttons = [-2, -1, 0, 1, 2]
   let pageCount = 0
 
