@@ -12,7 +12,7 @@
   const dispatch = createEventDispatcher()
   export let loading = false
   export let currentPage = 1
-  export let pageSize = 10
+  export let perPage = 10
   export let size = false
   export let responsive = true
   export let bordered = false
@@ -58,7 +58,7 @@
       <SveltestrapPagination
         {totalItems}
         {currentPage}
-        {pageSize}
+        {perPage}
         limit="{2}"
         showStepOptions="{true}"
         on:setPage={onPageChange}

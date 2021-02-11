@@ -13,7 +13,7 @@ Server-side (get data from server) table on svelte and sveltestrap.
   let rows = [];
   let page = 0; //first page
 	let pageIndex = 0; //first row
-  let pageSize = 3; //optional, 10 by default
+  let perPage = 3; //optional, 10 by default
 
   let loading = true;
   let rowsCount = 0;
@@ -26,7 +26,7 @@ Server-side (get data from server) table on svelte and sveltestrap.
 
   async function load(_page) {
     loading = true;
-    const data = await getData(_page, pageSize, text, sorting);
+    const data = await getData(_page, perPage, text, sorting);
     rows = data.rows;
     rowsCount = data.rowsCount;
     loading = false;
@@ -53,7 +53,7 @@ Server-side (get data from server) table on svelte and sveltestrap.
   }
 </script>
 
-<Table {loading} {rows} {pageIndex} {pageSize} let:rows={rows2}>
+<Table {loading} {rows} {pageIndex} {perPage} let:rows={rows2}>
   <div slot="top">
     <Search on:search={onSearch} />
   </div>
