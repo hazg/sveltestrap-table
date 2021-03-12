@@ -1,6 +1,6 @@
 {
   "name": "sveltestrap-table",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "src/table.svelte",
   "description": "Server-side (get data from server) table on svelte and sveltestrap.",
   "license": "MIT",
@@ -8,8 +8,8 @@
     "dist": "rollup -c"
   },
   "dependencies": {
-    "@iconify/iconify": "^1.0.7",
-    "@iconify/svelte": "^1.0.3",
+    "@iconify/iconify": ">1.0.0",
+    "@iconify/svelte": ">1.0.0",
     "svelte": "^3.0.0",
     "sveltestrap": "^3.13.0"
   },
@@ -23,6 +23,6 @@
   ],
   "devDependencies": {
     "svelte-dynamic-iconify": "^1.0.4",
-    "sveltestrap-paginate": "^0.0.2"
+    "sveltestrap-paginate": "^0.0.4"
   }
 }

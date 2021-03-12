@@ -2,36 +2,15 @@
 # yarn lockfile v1
 
 
-"@cyberalien/redundancy@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@cyberalien/redundancy/-/redundancy-1.1.0.tgz#8f8f9396de904428c7baaaffbf672ef41bbdc6f3"
-  integrity sha512-+ZvuwtVXzyxX1CWnP+X5XgDelseU9KSYgmPu3/DSraR7Qyi/vLZwuRRX0sYO24M/gZaChNXRBEK6RHRe3uBndw==
-
-"@iconify/core@^1.0.0-rc.2":
-  version "1.0.0-rc.5"
-  resolved "https://registry.yarnpkg.com/@iconify/core/-/core-1.0.0-rc.5.tgz#6ae8e3a8f8cef5d4a7fb753c6f2b340658fd6611"
-  integrity sha512-1VFvNlBqsX/pMRI3nd00UzEqAS7weayJ/CyCD18b8+kFa9PvoVcGAmob1bTTm++v+QKVqQs+8iQaBFl/DrrsvA==
-  dependencies:
-    "@cyberalien/redundancy" "^1.1.0"
-    "@iconify/types" "^1.0.6"
-
 "@iconify/iconify@^1.0.7":
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/@iconify/iconify/-/iconify-1.0.7.tgz#22e6d384482995738746eeb38b9b76588df41d57"
   integrity sha512-qCbH1V/Ceg302lrgBiiXCZAyqMAq8KqsHYokCpUvgBH6yYfAmvlSkEEBrmJdHofQvfY/+xaeQcsOOTjW7JakNw==
 
 "@iconify/svelte@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@iconify/svelte/-/svelte-1.0.3.tgz#308d5f2f15be39c28b9b7bb7a858078c26f62595"
-  integrity sha512-Exjwm+LDOmueoVRd8hyG7s+8Q/jTh3tFOaaHTy/TCI2/OTkZe02fkHAUeNtlwnr867X6h3dC2ZIt0Ie4epaGhg==
-  dependencies:
-    "@iconify/core" "^1.0.0-rc.2"
-    "@iconify/types" "^1.0.5"
-
-"@iconify/types@^1.0.5", "@iconify/types@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@iconify/types/-/types-1.0.6.tgz#87a0409d9ce58a04e6c76f89637d69c81bc0d942"
-  integrity sha512-eG74WPaqjBGnZ3Xy36X4LRDA/ZlhCK6T0zbsAAIYObY2Qija/379iXx+e2wWwEIXS46B62nGaUcuI0MpUnTSrg==
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@iconify/svelte/-/svelte-1.0.4.tgz#0fd5877ca8c7fa60cdb74f9c64b2490f019e4859"
+  integrity sha512-Bjr4UMJUsMCra1lpMYIijLZJustalA7FuBldV9B7IsaeKGZ06rcmgeVUYJqrKJ/0bhRg/chcKasLjUlFqWIoMQ==
 
 "@polka/url@^0.5.0":
   version "0.5.0"
@@ -39,9 +18,9 @@
   integrity sha512-oZLYFEAzUKyi3SKnXvj32ZCEGH6RDnao7COuCVhDydMS9NrCSVXhM79VaKyP5+Zc33m0QXEd2DN3UkU7OsHcfw==
 
 "@popperjs/core@^2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.6.0.tgz#f022195afdfc942e088ee2101285a1d31c7d727f"
-  integrity sha512-cPqjjzuFWNK3BSKLm0abspP0sp/IGOli4p5I5fKFAzdS8fvjdOwDCfZqAaIiXd9lPkOWi3SUUfZof3hEb7J/uw==
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.9.1.tgz#7f554e7368c9ab679a11f4a042ca17149d70cf12"
+  integrity sha512-DvJbbn3dUgMxDnJLH+RZQPnXak1h4ZVYQ7CWiFWjQwBFkVajT4rfw2PdpHLTSTwxrYfnoEXkuBiwkDm6tPMQeA==
 
 console-clear@^1.1.0:
   version "1.1.1"
@@ -74,9 +53,9 @@ lodash.tonumber@^4.0.3:
   integrity sha1-C5azGzVnJ5Prf1pj7nkfG56QJdk=
 
 mime@^2.3.1:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/mime/-/mime-2.5.0.tgz#2b4af934401779806ee98026bb42e8c1ae1876b1"
-  integrity sha512-ft3WayFSFUVBuJj7BMLKAQcSlItKtfjsKDDsii3rqFDAZ7t11zRe8ASw/GlmivGwVUYtwkQrxiGGpL6gFvB0ag==
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-2.5.2.tgz#6e3dc6cc2b9510643830e5f19d5cb753da5eeabe"
+  integrity sha512-tqkh47FzKeCPD2PUiPB6pkbMzsCasjxAfC62/Wap5qrUWcb+sFasXUC5I3gYM5iBM8v/Qpn4UK0x+j0iHyFPDg==
 
 mri@^1.1.0:
   version "1.1.6"
@@ -112,14 +91,14 @@ sirv@^0.4.6:
     mime "^2.3.1"
 
 svelte-dynamic-iconify@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/svelte-dynamic-iconify/-/svelte-dynamic-iconify-1.0.4.tgz#b48c9edebe793b7d504ab6b63284fbbada955fa3"
-  integrity sha512-QvryEAx0WggPnC6IZcG9sUctwcZnJvfDhtJeQOou4qylbY05YIp2GIopuh+RUXVwVDM18NmtyC2i7C0xb3Ov4w==
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/svelte-dynamic-iconify/-/svelte-dynamic-iconify-1.0.7.tgz#aa804a510cc4cf73f5820c1d93c3d1049b0094eb"
+  integrity sha512-MC3FS4JFmzOhfu8WkGaqh5L9XX5CJ2J479XQskYQAtWxl3tVeScZAlnQ/cQfjP716zzi6PDpZxP4tlHsWLcBXg==
 
 svelte@^3.0.0:
-  version "3.32.1"
-  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.32.1.tgz#c4b6e35517d0ed77e652cc8964ef660afa2f70f3"
-  integrity sha512-j1KmD2ZOU0RGq1/STDXjwfh0/eJ/Deh2NXyuz1bpR9eOcz9yImn4CGxXdbSAN7cMTm9a7IyPUIbuBCzu/pXK0g==
+  version "3.35.0"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.35.0.tgz#e0d0ba60c4852181c2b4fd851194be6fda493e65"
+  integrity sha512-gknlZkR2sXheu/X+B7dDImwANVvK1R0QGQLd8CNIfxxGPeXBmePnxfzb6fWwTQRsYQG7lYkZXvpXJvxvpsoB7g==
 
 sveltestrap-paginate@^0.0.2:
   version "0.0.2"
