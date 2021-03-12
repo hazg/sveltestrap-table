@@ -1,14 +1,28 @@
 {
   "name": "sveltestrap-table",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/table.svelte",
   "description": "Server-side (get data from server) table on svelte and sveltestrap.",
+  "license": "MIT",
+  "scripts": {
+    "dist": "rollup -c"
+  },
   "dependencies": {
     "@iconify/iconify": "^1.0.7",
     "@iconify/svelte": "^1.0.3",
     "svelte": "^3.0.0",
-    "svelte-dynamic-iconify": "hazg/svelte-dynamic-iconify",
-    "sveltestrap": "^3.13.0",
-    "sveltestrap-paginate": "hazg/sveltestrap-paginate"
+    "sveltestrap": "^3.13.0"
+  },
+  "keywords": [
+    "svelte",
+    "sveltestrap",
+    "bootstrap",
+    "table",
+    "data",
+    "server-side"
+  ],
+  "devDependencies": {
+    "svelte-dynamic-iconify": "^1.0.4",
+    "sveltestrap-paginate": "^0.0.2"
   }
 }

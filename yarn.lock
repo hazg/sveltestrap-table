@@ -111,18 +111,20 @@ sirv@^0.4.6:
     "@polka/url" "^0.5.0"
     mime "^2.3.1"
 
-svelte-dynamic-iconify@hazg/svelte-dynamic-iconify:
-  version "1.0.1"
-  resolved "https://codeload.github.com/hazg/svelte-dynamic-iconify/tar.gz/822fd6951ed02d4cca0c357a5e19d515ea5d7e6a"
+svelte-dynamic-iconify@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/svelte-dynamic-iconify/-/svelte-dynamic-iconify-1.0.4.tgz#b48c9edebe793b7d504ab6b63284fbbada955fa3"
+  integrity sha512-QvryEAx0WggPnC6IZcG9sUctwcZnJvfDhtJeQOou4qylbY05YIp2GIopuh+RUXVwVDM18NmtyC2i7C0xb3Ov4w==
 
 svelte@^3.0.0:
   version "3.32.1"
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.32.1.tgz#c4b6e35517d0ed77e652cc8964ef660afa2f70f3"
   integrity sha512-j1KmD2ZOU0RGq1/STDXjwfh0/eJ/Deh2NXyuz1bpR9eOcz9yImn4CGxXdbSAN7cMTm9a7IyPUIbuBCzu/pXK0g==
 
-sveltestrap-paginate@hazg/sveltestrap-paginate:
-  version "0.0.1"
-  resolved "https://codeload.github.com/hazg/sveltestrap-paginate/tar.gz/51f1d7a59faa2feebc79bce0349295d4cf12982c"
+sveltestrap-paginate@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/sveltestrap-paginate/-/sveltestrap-paginate-0.0.2.tgz#bd270c107fc7e5299c12f671c3064b5b8c93a1ee"
+  integrity sha512-53aTPJj/1nNr9EjCpY4djXa5SN2sQFoWNjwE/MJ7UPq6RyWdPA550zmOulQBvoFDxwBIrFqjGjSJ65rhtfWmMw==
   dependencies:
     sirv-cli "^0.4.4"
 

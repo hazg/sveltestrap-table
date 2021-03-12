@@ -4,7 +4,7 @@
   import TableRow from "./table-row.svelte"
   import Sort from "./sort.svelte"
   import { Table } from 'sveltestrap'
-  import { SveltestrapPagination } from 'sveltestrap-paginate'
+  import SveltestrapPagination from 'sveltestrap-paginate'
 </script>
 
 <script>
