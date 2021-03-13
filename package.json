@@ -1,8 +1,8 @@
 {
   "name": "sveltestrap-table",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "main": "src/table.svelte",
-  "description": "Server-side (get data from server) table on svelte and sveltestrap.",
+  "description": "Simple table wrapper with pagination and sort controls",
   "license": "MIT",
   "scripts": {
     "dist": "rollup -c"
@@ -17,12 +17,10 @@
     "svelte",
     "sveltestrap",
     "bootstrap",
-    "table",
-    "data",
-    "server-side"
+    "table"
   ],
   "devDependencies": {
-    "svelte-dynamic-iconify": "^1.0.4",
-    "sveltestrap-paginate": "^0.0.4"
+    "svelte-dynamic-iconify": ">1.0.4",
+    "sveltestrap-paginate": ">0.0.4"
   }
 }

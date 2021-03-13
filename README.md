@@ -1,76 +1,43 @@
 [Original source](https://svelte.dev/repl/3238e5737f764431a26e243800dccc6d?version=3.16.4)
 ---
-Server-side (get data from server) table on svelte and sveltestrap.
+Simple table wrapper with pagination and sort controls
+
+dev version
+===========
+do not use in production
+
 ```svelte
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
 <script>
-  //TableRow component is optional and only serves to render odd/even row, you can use <tr> instead.
-  //Sort component is optional
-  import { onMount } from "svelte";
-  import Table, { Pagination, TableRow, Search, Sort } from "./table.svelte";
-  import { getData } from "api/v1/data.json";
-  import { sortNumber, sortString } from "./sorting.js";
+	import SveltestrapTable, {TableRow} from 'sveltestrap-table'
+	import dayjs from 'dayjs'
 
-  let rows = [];
-  let page = 0; //first page
-	let pageIndex = 0; //first row
-  let perPage = 3; //optional, 10 by default
+	let limit = 10
+	let page = 1
+	let apiUrl = 'https://604b7b98ee7cb900176a2338.mockapi.io/api/v1/sveltestrap-table?limit='+limit
+	let data = getData()
 
-  let loading = true;
-  let rowsCount = 0;
-  let text;
-  let sorting;
-
-  onMount(async () => {
-    await load(page);
-  });
-
-  async function load(_page) {
-    loading = true;
-    const data = await getData(_page, perPage, text, sorting);
-    rows = data.rows;
-    rowsCount = data.rowsCount;
-    loading = false;
+  function getData() {
+		fetch(apiUrl+'&'+'page='+ page)
+			.then(response=>response.json())
+			.then(d=>{ data = d })
   }
 
-  function onCellClick(row) {
-    alert(JSON.stringify(row));
-  }
-
-  function onPageChange(event) {
-    load(event.detail.page);
-		page = event.detail.page;
-  }
-
-  async function onSearch(event) {
-    text = event.detail.text;
-    await load(page);
-		page = 0;
-  }
-
-  async function onSort(event) {
-    sorting = { dir: event.detail.dir, key: event.detail.key };
-    await load(page);
-  }
+	function pageChange(e){
+		console.log(e)
+	}
 </script>
 
-<Table {loading} {rows} {pageIndex} {perPage} let:rows={rows2}>
-  <div slot="top">
-    <Search on:search={onSearch} />
-  </div>
-  <thead slot="head">
-    <tr>
-      <th> Name       <Sort key="name" on:sort={onSort} /></th>
-      <th> Lastname   <Sort key="lastName" on:sort={onSort} /></th>
-      <th> Age        <Sort key="age" on:sort={onSort} /> </th>
-    </tr>
-  </thead>
-  <tbody>
-    {#each rows2 as row, index (row)}
-      <TableRow {index} on:click={() => onCellClick(row)}>
-        <td data-label="Name">{row.name}</td>
-        <td data-label="Lastname">{row.lastName}</td>
-        <td data-label="Age">{row.age}</td>
-      </TableRow>
-    {/each}
-  </tbody>
-</Table>
+{#if data}
+	<SveltestrapTable on:pageChange={pageChange} totalItems=100>
+		{#each data as row}
+			<TableRow>
+				<td>{row.id}</td>
+				<td>{row.name}</td>
+				<td>{dayjs(row.createdAt).format('MMMM D, YYYY h:mm A')}</td>
+			</TableRow>
+		{/each}
+	</SveltestrapTable>
+{/if}
+```
