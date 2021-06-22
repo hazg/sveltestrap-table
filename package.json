@@ -20,6 +20,6 @@
   ],
   "devDependencies": {
     "svelte-dynamic-iconify": "hazg/svelte-dynamic-iconify",
-    "sveltestrap-paginate": ">0.0.4"
+    "sveltestrap-paginate": "hazg/sveltestrap-paginate"
   }
 }
