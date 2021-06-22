@@ -10,7 +10,7 @@
   "dependencies": {
     "@iconify/iconify": "<=1.0.7",
     "svelte": "^3.0.0",
-    "sveltestrap": "^3.13.0"
+    "sveltestrap": "bestguy/sveltestrap"
   },
   "keywords": [
     "svelte",
