@@ -10,13 +10,16 @@ const production = !process.env.ROLLUP_WATCH;
 
 
 export default {
-	input: 'src/table',
-	output: {
-		sourcemap: true,
-		format: 'iife',
-		name: 'app',
-		file: 'public/build/bundle.js'
-	},
+	input: 'src/table.svelte',
+	output: [
+    {
+      dir: 'src/',
+      exports: 'auto',
+      format: 'cjs',
+      sourcemap: true,
+      name: 'sveltestrap-table'
+    }
+  ],
 	plugins: [
 		svelte({
 			compilerOptions: {

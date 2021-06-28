@@ -1,6 +1,6 @@
 {
   "name": "sveltestrap-table",
-  "version": "1.6.6",
+  "version": "1.6.7",
   "main": "src/table.svelte",
   "description": "Simple table wrapper with pagination and sort controls",
   "license": "MIT",
@@ -10,16 +10,14 @@
   "dependencies": {
     "@iconify/iconify": "<=1.0.7",
     "svelte": "^3.0.0",
-    "sveltestrap": "bestguy/sveltestrap"
+    "sveltestrap": "bestguy/sveltestrap",
+    "svelte-dynamic-iconify": "hazg/svelte-dynamic-iconify",
+    "sveltestrap-paginate": "hazg/sveltestrap-paginate"
   },
   "keywords": [
     "svelte",
     "sveltestrap",
     "bootstrap",
     "table"
-  ],
-  "devDependencies": {
-    "svelte-dynamic-iconify": "hazg/svelte-dynamic-iconify",
-    "sveltestrap-paginate": "hazg/sveltestrap-paginate"
-  }
+  ]
 }
