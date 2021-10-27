@@ -8,7 +8,7 @@
     "dist": "rollup -c"
   },
   "dependencies": {
-    "@iconify/iconify": "<=1.0.7",
+    "@iconify/svelte": "^2.0.0",
     "svelte": "^3.0.0",
     "sveltestrap": "bestguy/sveltestrap",
     "svelte-dynamic-iconify": "hazg/svelte-dynamic-iconify",
