@@ -1,5 +1,5 @@
 <script>
-  import Icon from 'svelte-dynamic-iconify'
+  import Icon from "@iconify/svelte"
   import { createEventDispatcher } from "svelte"
 
   const dispatch = createEventDispatcher()
@@ -29,12 +29,12 @@
 >
   {#if sortBy.key == key}
     {#if state}
-      <Icon name={icons.asc} />
+      <Icon icon={icons.asc} />
     {:else}
-      <Icon name={icons.desc} />
+      <Icon icon={icons.desc} />
     {/if}
   {:else}
-    <Icon name={icons.unsorted} />
+    <Icon icon={icons.unsorted} />
   {/if}
   <slot />
 </span>
